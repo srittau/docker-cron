@@ -2,6 +2,12 @@
 
 set -e
 
+if test -f /app/env; then
+    set -a
+    source /app/env
+    set +a
+fi
+
 export PYTHONPATH=/app/src
 
 LOGFILE=/var/log/script.log
