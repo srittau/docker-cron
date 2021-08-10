@@ -1,2 +1,7 @@
-# docker-cron
-Base container for Python cron scrips
+# Base container for Python cron scripts
+
+Installation:
+
+```
+docker pull srittau/cron
+```
