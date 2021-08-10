@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-docker pull srittau/cron
+docker pull srittau/cron:latest
 ```
 
 ## Usage
@@ -11,7 +11,7 @@ docker pull srittau/cron
 In your `Dockerfile`:
 
 ```
-FROM srittau/cron:3.9
+FROM srittau/cron:latest
 ```
 
 You will also need two files in your build directory:
