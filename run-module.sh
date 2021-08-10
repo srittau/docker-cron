@@ -3,9 +3,12 @@
 set -e
 
 if test -f /app/env; then
+    TMP="$(mktemp env.XXXXXXXXXX)"
+    sed -e s/=/=\'/ /app/env | sed -e s/$/\'/ >"${TMP}"
     set -a
-    source /app/env
+    source "${TMP}"
     set +a
+    rm "${TMP}"
 fi
 
 export PYTHONPATH=/app/src
@@ -15,7 +18,7 @@ MODULE_NAME="$1"
 shift
 
 echo "***** $(date -Iseconds) Running $MODULE_NAME" >>"$LOGFILE"
-TMP=$(mktemp -p /tmp "cron-$MODULE_NAME.XXXXXXXXXX")
+TMP=$(mktemp "cron-$MODULE_NAME.XXXXXXXXXX")
 /app/virtualenv/bin/python -m "$MODULE_NAME" "$@" 2>&1 | tee -a "$LOGFILE" "$TMP"
 OUTPUT="$(cat "$TMP")"
 rm "${TMP}"
