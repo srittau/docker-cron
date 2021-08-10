@@ -1,0 +1,4 @@
+MAIL_SENDER = cron@example.com
+MAIL_RECEIVERS = user1@example.com, user2@example.org
+
+@daily     root    /app/run-module.sh mymodule

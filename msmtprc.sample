@@ -1,0 +1,7 @@
+defaults
+
+account cron
+host mail.example.com
+from cron@example.com
+
+account default : cron

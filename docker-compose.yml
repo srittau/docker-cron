@@ -1,0 +1,11 @@
+version: '3'
+services:
+  py39:
+    image: srittau/cron:3.9
+    build:
+      context: .
+      args:
+        - pyversion=3.9
+  latest:
+    image: srittau/cron:latest
+    build: .
