@@ -13,10 +13,6 @@ RUN mkdir -p /app/log
 RUN python -m venv /app/virtualenv
 RUN /app/virtualenv/bin/pip install --upgrade pip setuptools
 
-# Install requirements
-ONBUILD COPY ./requirements.txt /app/requirements.txt
-ONBUILD RUN /app/virtualenv/bin/pip --disable-pip-version-check install -q -r /app/requirements.txt
-
 # Install crontab
 COPY ./run-cron.sh /app/run-cron.sh
 COPY ./run-module.sh /app/run-module.sh
