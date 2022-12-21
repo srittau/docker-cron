@@ -1,5 +1,11 @@
 version: '3'
 services:
+  py311:
+    image: srittau/cron:3.11
+    build:
+      context: .
+      args:
+        - pyversion=3.11
   py310:
     image: srittau/cron:3.10
     build:
@@ -14,4 +20,7 @@ services:
         - pyversion=3.9
   latest:
     image: srittau/cron:latest
-    build: .
+    build:
+      context: .
+      args:
+        - pyversion=3.11
