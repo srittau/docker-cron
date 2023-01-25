@@ -1,7 +1,7 @@
-ARG pyversion=3.10
+ARG pyversion=3.11
 FROM python:${pyversion}-bullseye
-ARG pyversion=3.10
-ENV PYVERSION ${pyversion:-3.10}
+ARG pyversion=3.11
+ENV PYVERSION ${pyversion:-3.11}
 
 # Install cron and msmtp
 RUN apt-get update && \
