@@ -1,0 +1,4 @@
+MAIL_SENDER = cron@example.com
+MAIL_RECEIVERS = srittau@rittau.biz
+
+* * * * *  root /app/run-module.sh testee
