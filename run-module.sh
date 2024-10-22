@@ -3,12 +3,9 @@
 set -e
 
 if test -f /app/env; then
-    TMP="$(mktemp env.XXXXXXXXXX)"
-    sed -e s/=/=\'/ /app/env | sed -e s/$/\'/ >"${TMP}"
     set -a
-    source "${TMP}"
+    source "/app/env"
     set +a
-    rm "${TMP}"
 fi
 
 export PYTHONPATH=/app/src
