@@ -19,7 +19,7 @@ COPY ./run-module.sh /app/run-module.sh
 RUN rm -r /etc/cron.hourly /etc/cron.daily /etc/cron.weekly /etc/cron.monthly
 
 # Create empty msmtp configuration
-RUN touch /root/.msmtprc
+RUN touch /app/msmtprc
 
 # Run cron
 ENTRYPOINT ["/app/run-cron.sh"]

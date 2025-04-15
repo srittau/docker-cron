@@ -20,7 +20,7 @@ RUN rm -r /etc/cron.hourly /etc/cron.daily /etc/cron.weekly /etc/cron.monthly
 ONBUILD COPY ./crontab /etc/crontab
 
 # Copy msmtp configuration
-ONBUILD COPY ./msmtprc /root/.msmtprc
+ONBUILD COPY ./msmtprc /app/msmtprc
 
 # Run cron
 ENTRYPOINT ["/app/run-cron.sh"]

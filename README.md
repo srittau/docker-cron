@@ -30,7 +30,7 @@ yourself. In your `Dockerfile`:
 FROM srittau/cron:3.13-copy
 
 COPY ./crontab /etc/crontab
-COPY ./msmtprc /root/.msmtprc
+COPY ./msmtprc /app/msmtprc
 ```
 
 Copying the .msmtprc file is optional. By default, the image will not send
