@@ -20,14 +20,14 @@ requires several files in your build directory:
 In your `Dockerfile`:
 
 ```
-FROM srittau/cron:3.11-onbuild
+FROM srittau/cron:3.13-onbuild
 ```
 
 The `copy` variant requires you to copy your Python modules into the image
 yourself. In your `Dockerfile`:
 
 ```
-FROM srittau/cron:3.11-copy
+FROM srittau/cron:3.13-copy
 
 COPY ./crontab /etc/crontab
 COPY ./msmtprc /root/.msmtprc

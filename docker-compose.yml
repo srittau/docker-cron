@@ -1,4 +1,12 @@
 services:
+  py313-onbuild:
+    image: srittau/cron:3.13-onbuild
+    build:
+      context: .
+      dockerfile: Dockerfile-onbuild
+      args:
+        - pyversion=3.13
+
   py312-onbuild:
     image: srittau/cron:3.12-onbuild
     build:
@@ -21,7 +29,7 @@ services:
       context: .
       dockerfile: Dockerfile-onbuild
       args:
-        - pyversion=3.12
+        - pyversion=3.13
 
   latest:
     image: srittau/cron:latest
@@ -29,7 +37,15 @@ services:
       context: .
       dockerfile: Dockerfile-onbuild
       args:
-        - pyversion=3.12
+        - pyversion=3.13
+
+  py313-copy:
+    image: srittau/cron:3.13-copy
+    build:
+      context: .
+      dockerfile: Dockerfile-copy
+      args:
+        - pyversion=3.13
 
   py312-copy:
     image: srittau/cron:3.12-copy
@@ -53,4 +69,4 @@ services:
       context: .
       dockerfile: Dockerfile-copy
       args:
-        - pyversion=3.12
+        - pyversion=3.13
