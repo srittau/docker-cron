@@ -22,5 +22,5 @@ rm "${TMP}"
 
 if test -n "$MAIL_RECEIVERS" -a -n "$OUTPUT"; then
     MAIL_TEXT="Subject: cron output from $MODULE_NAME\r\nFrom: $MAIL_SENDER\r\nTo: $MAIL_RECEIVERS\r\n\r\n${OUTPUT}"
-    echo -e "$MAIL_TEXT" | msmtp $MAIL_RECEIVERS
+    echo -e "$MAIL_TEXT" | timeout 30 msmtp $MAIL_RECEIVERS
 fi
